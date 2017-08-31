@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.src.org.lanqiao.web.crud.rolewithuser.RoleWithUserMapper">
+<resultMap type="main.src.org.lanqiao.web.crud.entity.RoleWithUser" id="RoleWithUserResult">
+<id property="userid" column="id" />
+<result property="email" column="email" />
+<result property="username" column="name" />
+<result property="roleId" column="role_id" />
+<result property="name" column="name" />
+</resultMap>
+
+<select id="findAll" resultMap="RoleWithUserResult">
+select u.id,u.name,email,role_id,r.name from user AS u right join role AS r on role_id=r.id
+</select>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- jdbc属性文件 写配置信息 -->
+<typeAliases>
+<!-- <typeAlias alias="Student" type="com.mybatis.mappers.Student" /> -->
+<typeAlias alias="userwithmapper" type="main.src.org.lanqiao.web.crud.entity.RoleWithUser" />
+</typeAliases>
+<environments default="development">
+<environment id="development">
+<transactionManager type="JDBC" />
+<dataSource type="POOLED">
+<property name="driver" value="com.mysql.jdbc.Driver" />
+<property name="url" value="jdbc:mysql://localhost:3306/test" />
+<property name="username" value="root" />
+<property name="password" value="root" />
+</dataSource>
+</environment>
+</environments>
+<mappers>
+<!-- <mapper resource="com/mybatis/mappers/StudentMapper.xml" /> -->
+<mapper resource="main/src/org/lanqiao/web/crud/rolewithuser/RoleWithUserMapper.xml" />
+
+</mappers>
+</configuration>

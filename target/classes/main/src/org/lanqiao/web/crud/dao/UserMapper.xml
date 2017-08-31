@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.src.org.lanqiao.web.crud.dao.UserMapper">
+<resultMap type="main.src.org.lanqiao.web.crud.entity.User" id="UserResult">
+<id property="id" column="id" />
+<result property="email" column="email" />
+<result property="name" column="name" />
+<result property="age" column="age" />
+<result property="roleId" column="role_id" />
+</resultMap>
+<insert id="insertUser" parameterType="main.src.org.lanqiao.web.crud.entity.User">
+INSERT INTO user(ID,NAME,age,EMAIL,is_active,role_id)
+VALUES(#{id },#{name},#{age},#{email},#{active},#{roleId})
+</insert>
+<select id="findAll" resultMap="UserResult">
+select id,name,age,role_id,email from user
+</select>
+</mapper>
